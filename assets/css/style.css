@@ -1,0 +1,179 @@
+:root{
+     --ff-primary: "Nunito";
+     
+     --fs-extral-small: 14px;
+     --fs-small:15px;
+     --fs-medium:18px;
+     --fs-semi-large:22px;
+     --fs-large:26px;
+     --fs-extra-large:32px;
+
+     --fw-light: 500;
+     --fw-semi-bold: 600;
+     --fw-bold: 700;
+
+     --main-color: #820000;
+     --secondary-color: #FF7C7C;
+     --textuary-color: #B9005B;
+     --last-color: #FEE0C0;
+}
+
+/* RESETS */
+*,*::before,*::after{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+li{list-style: none;}
+
+a{text-decoration: none;}
+
+a,img,button,span,ion-icon,label,input,textarea {display: block;}
+
+button{
+     font: inherit;
+     background: none;
+     border: none;
+     cursor: pointer;
+}
+
+textarea,input{
+     font: inherit;
+     background: none;
+     border: none;
+     width: 100%;
+}
+
+/* NEW CSS FEATURE */
+:is(input,textarea):focus{outline: none;}
+:focus{outline-offset: 3px;}
+html{
+     font-family: var(--ff-primary);
+     scroll-behavior: smooth;
+}
+
+body{
+     background: white;
+     overflow-x: hidden;
+}
+
+/* SCROLL THUMBNAIL */
+::-webkit-scrollbar{width: 8px;}
+::-webkit-scrollbar-track{background: white;}
+::-webkit-scrollbar-thumb{background: peru;}
+
+/* RESUTABLE STYLES */
+.container{padding: 0 15px;}
+.h1,h2,h3,h4{
+     font-weight: var(--fw-semi-bold);
+     line-height: 1.3;
+     text-transform: capitalize;
+}
+.h1{
+     color: var(--main-color);
+     font-size: var(--fs-small);
+}
+
+.h2{font-size: var(--fs-medium);}
+.h3{
+     color: var(--main-color);
+     font-size: var(--fs-medium);
+}
+
+.h4{
+     color: var(--secondary-color);
+     font-size: var(--fs-large);
+     font-weight: var(--fw-semi-bold);
+}
+
+.btn{
+     font-size: var(--fs-medium);
+     text-transform: uppercase;
+     font-weight: var(--fw-semi-bold);
+     padding: 8px 30px;
+     border: 1px solid;
+     border-radius: 5px;
+}
+
+.btn-primary{
+     color: white;
+     background: var(--main-color);
+     border-color: var(--main-color);
+}
+
+.btn-primay:is(:hover,:focus){ background: #FEE0C0;}
+
+
+/* ------------ END OF RESET STYLES ---------------- */
+
+
+/* HEADER STYLES */
+header{
+     position: relative;
+     z-index: 2;
+     padding: 35px 0;
+}
+
+header .container{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+
+.navbar-menu-btn{
+     font-size: 30px;
+     padding: 10px;
+}
+
+.navbar{
+     visibility: hidden;
+     max-height: 0;
+     background: var(--main-color);
+     position: absolute;
+     overflow: hidden;
+     top: calc(100% -15px);
+     right: 15px;
+     left: 15px;
+     border-radius: 10px;
+     transform-origin: top;
+}
+
+.navbar.active{
+     visibility: visible;
+     pointer-events: all;
+     max-height: 40px;
+}
+
+.navbar-list{padding: 10px;}
+.nav-item:not(:last-child){border-bottom: 1px solid white;}
+.nav-link{
+     color: var(--textuary-color);
+     font-size: var(--fs-semi-large);
+     font-weight: var(--fw-semi-bold);
+     padding: 15px 10px;
+     opacity: 0;
+     transition: opacity var(--transition);
+}
+
+.nav-link:is(:hover,:focus) {background: salmon;}
+.navbar.active .nav-link{
+     transition-delay: 0.2s;
+     opacity: 1;
+}
+
+.navbar .btn-primary{display: none;}
+
+/* --------------- END OF HEADER STYLES-------------------- */
+
+/* HERO STYLES */
+.hero{
+     position: relative;
+     z-index: 1;
+     padding: 130px 0 140px;
+}
+
+.hero-content{text-align: center;}
+.hero-small-title,.hero-title,.hero-text{margin-bottom: 40px;}
+.hero-text{
+     font-size: var(--fs-medium);
+}
